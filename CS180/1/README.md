@@ -82,6 +82,18 @@ However, for larger images, the time it takes to calculate differences for a sin
     </div>
 </div>
 
+### few examples of my own choosing
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result_pyramid/master-pnp-prok-00000-00083u.jpg" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Adobe building in a grassy field, trees in background</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result_pyramid/master-pnp-prok-00200-00215u.jpg" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Lugano</p>
+    </div>
+</div>
+
 
 ## Bells & Whistles
 ### Better features
