@@ -63,7 +63,9 @@ education:
     institution: University of California, Berkeley Extension
     date_start: 2024-09-01
     date_end: 2024-12-31
-    summary: 
+    summary: |
+
+    
   # - area: PhD Artificial Intelligence
   #   institution: Stanford University
   #   date_start: 2016-01-01
