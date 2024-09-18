@@ -1,12 +1,12 @@
 ---
 # Leave the homepage title empty to use the site title
 title: "Kaichun Qiao's Homepage"
-date: 2022-10-24
+date: 2024-09-18
 type: landing
 
 design:
   # Default section spacing
-  spacing: "6rem"
+  spacing: "4rem"
 
 sections:
   - block: resume-biography-3
@@ -19,17 +19,17 @@ sections:
       #   text: Download CV
       #   url: uploads/resume.pdf
     design:
-      css_class: dark
+      css_class: light
       background:
-        color: black
-        image:
-          # Add your image background to `assets/media/`.
-          filename: stacked-peaks.svg
-          filters:
-            brightness: 1.0
-          size: cover
-          position: center
-          parallax: false
+        color: lightgray
+        # image:
+        #   # Add your image background to `assets/media/`.
+        #   filename: stacked-peaks.svg
+        #   filters:
+        #     brightness: 1.0
+        #   size: cover
+        #   position: center
+        #   parallax: false
   - block: markdown
     content:
       title: '📚 My Research'
