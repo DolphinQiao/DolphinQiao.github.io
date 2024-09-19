@@ -2,6 +2,10 @@
 title: "Project1: Colorizing the Prokudin-Gorskii photo collection"
 date: 2024-09-18
 url: "/CS180/1"
+authors:
+  - admin
+tags:
+    
 ---
 
 # Project1: Colorizing the Prokudin-Gorskii photo collection
