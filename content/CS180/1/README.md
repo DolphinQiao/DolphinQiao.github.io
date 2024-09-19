@@ -1,3 +1,9 @@
+---
+title: "Project1: Colorizing the Prokudin-Gorskii photo collection"
+date: 2024-09-18
+url: "/CS180/1"
+---
+
 # Project1: Colorizing the Prokudin-Gorskii photo collection
 ## Overview
 The goal of this project is to take the digitized Prokudin-Gorskii glass plate images and, using modern image processing techniques, automatically produce a color image with as few visual artifacts as possible.

@@ -37,6 +37,129 @@
     </item>
     
     <item>
+      <title>Project1: Colorizing the Prokudin-Gorskii photo collection</title>
+      <link>https://example.com/CS180/1/</link>
+      <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://example.com/CS180/1/</guid>
+      <description>&lt;h1 id=&#34;project1-colorizing-the-prokudin-gorskii-photo-collection&#34;&gt;Project1: Colorizing the Prokudin-Gorskii photo collection&lt;/h1&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The goal of this project is to take the digitized Prokudin-Gorskii glass plate images and, using modern image processing techniques, automatically produce a color image with as few visual artifacts as possible.&lt;/p&gt;
+&lt;h2 id=&#34;algorithm-implementation&#34;&gt;Algorithm Implementation&lt;/h2&gt;
+&lt;h3 id=&#34;aligning-method&#34;&gt;Aligning Method&lt;/h3&gt;
+&lt;p&gt;For smaller images, I use the blue channel as a baseline, iteratively enumerate shifts([-15, 15]) in other channels, and compare the shifted images with the baseline image to identify the smallest difference as the result. Initially, I used the L2 norm difference between two images as the metric for evaluating differences. Although this metric can successfully match some images, it lacks adaptability and sensitivity to differences, because the values in the RGB channels can vary significantly and cannot be directly calculated at the pixel level. Subsequently, I utilized the Sobel operator to calculate the gradient information of both images. I chose the 3*3 Sobel kernel size to get finer details of gradient. The difference in gradient information between the two images serves as the evaluation metric. This method is advantageous because the gradient direction of the same images tends to be similar, allowing for better alignment of the images.&lt;/p&gt;
+&lt;h3 id=&#34;speed-up-method&#34;&gt;Speed up Method&lt;/h3&gt;
+&lt;p&gt;However, for larger images, the time it takes to calculate differences for a single image becomes excessively long, making the time spent on enumerating shifts 31*31 times unacceptable. Because the distance moved at low resolution is longer than at high resolution, I recursively reduce the image size by half and calculate the offset at the lower resolution, doubling the offset at the end of each recursion. By reducing the search range to [-2, 2], for 4K resolution images, the recursion depth does not exceed 8. This algorithm significantly reduces the computational load while maintaining the same excellent performance in results.&lt;/p&gt;
+&lt;h2 id=&#34;result-gallery&#34;&gt;Result Gallery&lt;/h2&gt;
+&lt;div style=&#34;display: flex; justify-content: space-around; align-items: flex-start;&#34;&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/cathedral.jpg&#34; alt=&#34;First Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;cathedral g_shift: [5, 2], r_shift: [12, 3]&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/church.jpg&#34; alt=&#34;Second Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;church g_shift: [25, 3], r_shift: [58, -4]&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;display: flex; justify-content: space-around; align-items: flex-start;&#34;&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/emir.jpg&#34; alt=&#34;First Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;emir g_shift: [49, 24], r_shift: [106, 42]&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/harvesters.jpg&#34; alt=&#34;Second Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;harvesters g_shift: [56, 11], r_shift: [118, 10]&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;display: flex; justify-content: space-around; align-items: flex-start;&#34;&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/icon.jpg&#34; alt=&#34;First Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;icon g_shift: [39, 16], r_shift: [88, 23]&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/lady.jpg&#34; alt=&#34;Second Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;lady g_shift: [57, 9], r_shift: [121, 13]&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;display: flex; justify-content: space-around; align-items: flex-start;&#34;&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/melons.jpg&#34; alt=&#34;First Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;melons g_shift: [77, 5], r_shift: [176, 14] &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/monastery.jpg&#34; alt=&#34;Second Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;monastery g_shift: [-3, 2], r_shift: [3, 2]&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;display: flex; justify-content: space-around; align-items: flex-start;&#34;&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/onion_church.jpg&#34; alt=&#34;First Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;onion_church g_shift: [50, 28], r_shift: [108, 34]&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/sculpture.jpg&#34; alt=&#34;Second Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;sculpture g_shift: [33, -11], r_shift: [140, -27]&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;display: flex; justify-content: space-around; align-items: flex-start;&#34;&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/self_portrait.jpg&#34; alt=&#34;First Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;self_portrait g_shift: [81, 31], r_shift: [175, 37]&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/three_generations.jpg&#34; alt=&#34;Second Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;three_generations g_shift: [59, 15], r_shift: [115, 12]&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;display: flex; justify-content: space-around; align-items: flex-start;&#34;&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/tobolsk.jpg&#34; alt=&#34;First Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;tobolsk g_shift: [3, 2], r_shift: [6, 3]&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/train.jpg&#34; alt=&#34;Second Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;train g_shift: [41, 0], r_shift: [84, 28]&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;few-examples-of-my-own-choosing&#34;&gt;few examples of my own choosing&lt;/h3&gt;
+&lt;div style=&#34;display: flex; justify-content: space-around; align-items: flex-start;&#34;&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/master-pnp-prok-00000-00083u.jpg&#34; alt=&#34;First Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;Adobe building in a grassy field, trees in background&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/master-pnp-prok-00200-00215u.jpg&#34; alt=&#34;Second Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;Lugano&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;bells--whistles&#34;&gt;Bells &amp;amp; Whistles&lt;/h2&gt;
+&lt;h3 id=&#34;better-features&#34;&gt;Better features&lt;/h3&gt;
+&lt;p&gt;As the description in &amp;ldquo;Vanilla Method&amp;rdquo; part above, I implemented a novel aligning method using Sobel operator to calculate the image gradient.&lt;/p&gt;
+&lt;div style=&#34;display: flex; justify-content: space-around; align-items: flex-start;&#34;&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_l2/emir.jpg&#34; alt=&#34;First Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;L2 norm aligning&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/emir.jpg&#34; alt=&#34;Second Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;Sobel operator aligning&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;crop-the-images&#34;&gt;Crop the images&lt;/h3&gt;
+&lt;p&gt;I designed an algorithm to trim the excess edges of an image. First, the size of the image is reduced by 5% with the aim of cutting off the white parts at the edges. Next, Canny edge detection is applied separately to each of the RGB channels. This involves calculating the coordinates of the edge pixels that are closest to the frame. The largest common area across all channels is taken as the final result for the crop.&lt;/p&gt;
+&lt;div style=&#34;display: flex; justify-content: space-around; align-items: flex-start;&#34;&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_pyramid/emir.jpg&#34; alt=&#34;First Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;L2 norm aligning&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;flex: 1; padding: 10px;&#34;&gt;
+        &lt;img src=&#34;./result_crop/emir.jpg&#34; alt=&#34;Second Image&#34; style=&#34;width: 100%;&#34;&gt;
+        &lt;p style=&#34;text-align: center;&#34;&gt;Sobel operator aligning&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Projects</title>
       <link>https://example.com/projects/</link>
       <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
@@ -307,7 +430,7 @@
 
 
 
-&lt;div id=&#34;chart-392641857&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-891657432&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   async function fetchChartJSON() {
     console.debug(&#39;Hugo Blox fetching chart JSON...&#39;)
@@ -325,7 +448,7 @@
 
       fetchChartJSON().then(chart =&gt; {
         console.debug(&#39;Plotting chart...&#39;)
-        window.Plotly.newPlot(&#39;chart-392641857&#39;, chart.data, chart.layout, {responsive: true});
+        window.Plotly.newPlot(&#39;chart-891657432&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
