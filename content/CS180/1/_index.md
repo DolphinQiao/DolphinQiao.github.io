@@ -8,7 +8,6 @@ tags:
     
 ---
 
-# Project1: Colorizing the Prokudin-Gorskii photo collection
 ## Overview
 The goal of this project is to take the digitized Prokudin-Gorskii glass plate images and, using modern image processing techniques, automatically produce a color image with as few visual artifacts as possible.
 ## Algorithm Implementation
