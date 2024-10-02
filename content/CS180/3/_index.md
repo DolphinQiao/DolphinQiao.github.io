@@ -144,3 +144,12 @@ To create a caricature, you extrapolate beyond this difference by scaling the di
     <img src="./images/selfie_caricature.png" alt="Second Image" style="width: 100%;">
     <p style="text-align: center;">α=1.5</p>
 </div>
+
+## Bells and Whistles
+
+I blended my face with the average Danes features to make my facial distribution more similar to that of the Danes.
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./images/change_selfie_to_danes.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">face changed to Danes</p>
+</div>
