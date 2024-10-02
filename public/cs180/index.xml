@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kaichun Qiao&#39;s Homepage</title>
-    <link>http://localhost:1313/cs180/</link>
-      <atom:link href="http://localhost:1313/cs180/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://example.com/cs180/</link>
+      <atom:link href="https://example.com/cs180/index.xml" rel="self" type="application/rss+xml" />
     <description>Kaichun Qiao&#39;s Homepage</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 19 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 02 Oct 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:1313/media/icon_hu15239317627240320443.png</url>
+      <url>https://example.com/media/icon_hu15239317627240320443.png</url>
       <title>Kaichun Qiao&#39;s Homepage</title>
-      <link>http://localhost:1313/cs180/</link>
+      <link>https://example.com/cs180/</link>
     </image>
     
   </channel>
