@@ -517,8 +517,9 @@
       "bells--whistles",
       "bells-and-whistles",
       "better-features",
+      "blending-images",
       "callouts",
-      "chart-249671853",
+      "chart-274568139",
       "charts",
       "code",
       "crop-the-images",
@@ -557,9 +558,11 @@
       "part-3-the-morph-sequence",
       "part-4-the-mean-face-of-a-population",
       "part-5-caricatures-extrapolating-from-the-mean",
+      "part-a-image-warping-and-mosaicing",
       "podcast",
       "profile",
       "projects",
+      "recovering-homographies",
       "result-gallery",
       "search",
       "search_toggle",
@@ -577,12 +580,14 @@
       "spoiler-2",
       "spoiler-3",
       "sun",
+      "taking-images",
       "teaching",
       "test-students",
       "themes",
       "todo-lists",
       "top",
-      "video"
+      "video",
+      "warping-images"
     ]
   }
 }
