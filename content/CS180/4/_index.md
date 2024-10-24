@@ -201,3 +201,151 @@ The final results with full image blending are shown below.
 </div>
 
 -------------------------
+
+## Part B: Feature Matching and Autostitching
+
+### Corner Detection
+
+Firstly, in order to find the interest points, we would like to first focus on the "corners" of the image. To find these corners, we use the Harris interest point detector, and use peaks in the matrix as the corner points.
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/2_harris_all.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Harris points in the image</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/2_harris_h.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Harris matrix</p>
+    </div>
+</div>
+
+This part of the algorithm implements adaptive non-maximal suppression (ANMS) as described in the MOPS paper. The goal is to select interest points that are spaced sufficiently far apart from other points with significantly higher corner responses. Specifically, the algorithm calculates:
+
+$$
+r_i = \min_{i} |\vec{x}_i - \vec{x}_j| \quad \forall \vec{x}_j : h(\vec{x}_i) < c_{\text{robust}} h(\vec{x}_j)
+$$
+
+for each interest point. This formula determines the minimum distance between a given interest point and any other point with a substantially higher corner response. The algorithm then selects the top-K points based on this distance, ensuring that the chosen interest points are well-distributed across the image by eliminating many nearby points with weaker responses.
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/2_harris_anms.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Harris points after ANMS</p>
+</div>
+
+### Feature Extraction
+
+As recommended in the paper, subsampling a larger patch around each interest point to create a feature descriptor enhances the descriptors' performance. However, to prevent aliasing, it is important to blur the image beforehand. This ensures that high frequencies above the Nyquist limit are filtered out before subsampling. In this basic implementation, an axis-aligned patch is used, and interest points or features are only detected at a single level of the Gaussian pyramid.
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/features_all.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Flattened features</p>
+</div>
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/features.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">random corner examples</p>
+</div>
+
+### Feature matching
+
+After extracting the basic features, the pairwise distances between features in one image and those in another are calculated. To improve matching accuracy, the ratio of the error between the first nearest neighbor and the second nearest neighbor is computed and used as a threshold, following Lowe’s approach. This method offers better discriminatory power compared to thresholding based solely on the distance to the nearest neighbor.
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/2_corres_all.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;"></p>
+</div>
+
+### RANSAC
+
+The correspondences obtained in the previous step are generally reliable, but some incorrect matches or outliers remain, which would significantly affect the quality of a least-squares solution if computed directly from these correspondences. To address this, a randomized consensus algorithm (RANSAC) is applied. In this process, random subsets of the matches are selected, and a homography is computed using a least-squares approach. The number of points that are "well-explained" by the homography (i.e., the L2 distance between the transformed point and the ground truth is small) are counted as inliers. The homography with the highest inlier count is selected as the best one. After identifying the inliers, a final least-squares homography is computed. From there, the image warping and stitching proceed in the same manner as described in the part A.
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/2_corres_ransac.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Keypoint pairs after RANSAC</p>
+</div>
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/2_blend_auto.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;"></p>
+</div>
+
+### Result gallery
+
+#### Case1:
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/2_corres_all.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Keypoint pairs</p>
+</div>
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/2_corres_ransac.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Keypoint pairs after RANSAC</p>
+</div>
+</div>
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/2_blend.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Manually blend image</p>
+</div>
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/2_blend_auto.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Auto blend image</p>
+</div>
+</div>
+
+#### Case2:
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/3_corres_all.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Keypoint pairs</p>
+</div>
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/3_corres_ransac.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Keypoint pairs after RANSAC</p>
+</div>
+</div>
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/3_blend.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Manually blend image</p>
+</div>
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/3_blend_auto.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Auto blend image</p>
+</div>
+</div>
+
+#### Case3:
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/4_corres_all.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Keypoint pairs</p>
+</div>
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/4_corres_ransac.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Keypoint pairs after RANSAC</p>
+</div>
+</div>
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/4_blend.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Manually blend image</p>
+</div>
+
+<div style="flex: 1; padding: 10px;">
+    <img src="./result/4_blend_auto.png" alt="Second Image" style="width: 100%;">
+    <p style="text-align: center;">Auto blend image</p>
+</div>
+</div>
+
