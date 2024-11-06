@@ -11,7 +11,11 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://example.com/cs180/</loc>
-    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://example.com/cs180/5/</loc>
+    <lastmod>2024-11-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://example.com/cs180/4/</loc>

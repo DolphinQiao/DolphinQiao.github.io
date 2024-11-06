@@ -1,0 +1,1536 @@
+<!doctype html>
+<!-- This site was created with Hugo Blox. https://hugoblox.com -->
+<!-- Last Published: November 5, 2024 --><html lang="en-us" dir="ltr"
+      data-wc-theme-default="system">
+  
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="Hugo Blox Builder 0.2.0" />
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Kaichun Qiao" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Kaichun Qiao Homepage" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://example.com/cs180/5/" />
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/themes/emerald.min.css" />
+  
+
+  
+  
+    
+    <link href="/dist/wc.min.css" rel="stylesheet" />
+  
+
+  
+  
+  
+
+  
+
+  <script>
+     
+    window.hbb = {
+       defaultTheme: document.documentElement.dataset.wcThemeDefault,
+       setDarkTheme: () => {
+        document.documentElement.classList.add("dark");
+        document.documentElement.style.colorScheme = "dark";
+      },
+       setLightTheme: () => {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.style.colorScheme = "light";
+      }
+    }
+
+    console.debug(`Default Hugo Blox Builder theme is ${window.hbb.defaultTheme}`);
+
+    if ("wc-color-theme" in localStorage) {
+      localStorage.getItem("wc-color-theme") === "dark" ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+    } else {
+      window.hbb.defaultTheme === "dark" ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+      if (window.hbb.defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+      }
+    }
+  </script>
+
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      let checkboxes = document.querySelectorAll('li input[type=\'checkbox\'][disabled]');
+      checkboxes.forEach(e => {
+        e.parentElement.parentElement.classList.add('task-list');
+      });
+
+      
+      const liNodes = document.querySelectorAll('.task-list li');
+      liNodes.forEach(nodes => {
+        let textNodes = Array.from(nodes.childNodes).filter(node => node.nodeType === 3 && node.textContent.trim().length > 1);
+        if (textNodes.length > 0) {
+          const span = document.createElement('label');
+          textNodes[0].after(span);  
+          span.appendChild(nodes.querySelector('input[type=\'checkbox\']'));
+          span.appendChild(textNodes[0]);
+        }
+      });
+    });
+  </script>
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <link rel="alternate" href="/cs180/5/index.xml" type="application/rss+xml" title="Kaichun Qiao&#39;s Homepage" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hu7544168490934758255.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu6933210922419359523.png" />
+
+  <link rel="canonical" href="https://example.com/cs180/5/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Kaichun Qiao&#39;s Homepage" />
+  <meta property="og:url" content="https://example.com/cs180/5/" />
+  <meta property="og:title" content="Project5: Fun With Diffusion Models! | Kaichun Qiao&#39;s Homepage" />
+  <meta property="og:description" content="Kaichun Qiao Homepage" /><meta property="og:image" content="https://example.com/media/icon_hu15239317627240320443.png" />
+    <meta property="twitter:image" content="https://example.com/media/icon_hu15239317627240320443.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta property="og:updated_time" content="2024-11-05T00:00:00&#43;00:00" />
+    
+  
+
+  
+
+
+
+
+  <title>Project5: Fun With Diffusion Models! | Kaichun Qiao&#39;s Homepage</title>
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <style>
+    @font-face {
+      font-family: 'Inter var';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url(/dist/font/Inter.var.woff2) format(woff2);
+    }
+  </style>
+
+  
+
+  
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/dist/pagefind/pagefind-ui.be766eb419317a14ec769d216e9779bfe8f3737c80e780f4ba0dafb57a41a482.css" integrity="sha256-vnZutBkxehTsdp0hbpd5v&#43;jzc3yA54D0ug2vtXpBpII=" />
+
+
+<script src="/dist/pagefind/pagefind-ui.87693d7c6f2b3b347ce359d0ede762c033419f0a32b22ce508c335a81d841f1b.js" integrity="sha256-h2k9fG8rOzR841nQ7ediwDNBnwoysizlCMM1qB2EHxs="></script>
+
+
+<script>window.hbb.pagefind = {"baseUrl":"/"};</script>
+
+<style>
+  html.dark {
+    --pagefind-ui-primary: #eeeeee;
+    --pagefind-ui-text: #eeeeee;
+    --pagefind-ui-background: #152028;
+    --pagefind-ui-border: #152028;
+    --pagefind-ui-tag: #152028;
+  }
+</style>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      baseUrl: window.hbb.pagefind.baseUrl,
+      bundlePath: window.hbb.pagefind.baseUrl + "pagefind/",
+    });
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    let element = document.getElementById('search');
+    let trigger = document.getElementById('search_toggle');
+
+    if (trigger) {
+      trigger.addEventListener('click', () => {
+        element.classList.toggle('hidden');
+        element.querySelector("input").value = ""
+        element.querySelector("input").focus()
+
+        if (!element.classList.contains('hidden')) {
+          let clear_trigger = document.querySelector('.pagefind-ui__search-clear');
+
+          if (clear_trigger && !clear_trigger.hasAttribute('listenerOnClick')) {
+            clear_trigger.setAttribute('listenerOnClick', 'true');
+
+            clear_trigger.addEventListener('click', () => {
+              element.classList.toggle('hidden');
+            });
+          }
+        }
+
+      });
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link type="text/css" rel="stylesheet" href="/dist/lib/katex/katex.min.505d5f829022bb7b4f24dfee0aa1141cd7bba67afe411d1240335f820960b5c3.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr&#43;QR0SQDNfgglgtcM=" />
+  
+  
+  <script defer src="/dist/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw&#43;iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4="></script>
+  
+  
+  
+  
+  <script defer src="/js/katex-renderer.6579ec9683211cfb952064aedf3a3baea5eeb17a061775b32b70917474637c80.js" integrity="sha256-ZXnsloMhHPuVIGSu3zo7rqXusXoGF3WzK3CRdHRjfIA="></script>
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  <script
+    defer
+    src="/js/hugo-blox-en.min.e5fa931947cac2d947732ea37a770aae2b5bd4a50b6048060cd129b46159a06d.js"
+    integrity="sha256-5fqTGUfKwtlHcy6jencKritb1KULYEgGDNEptGFZoG0="
+  ></script>
+
+  
+  
+
+
+
+
+
+
+
+
+  
+    
+      
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+      
+    
+  
+
+
+
+
+</head>
+
+  <body class="dark:bg-hb-dark dark:text-white page-wrapper" id="top">
+    <div id="page-bg"></div>
+    <div class="page-header sticky top-0 z-30">
+      
+      
+      
+        
+        
+        
+          <header id="site-header" class="header">
+  <nav class="navbar px-3 flex justify-left">
+    <div class="order-0 h-100">
+      
+      <a class="navbar-brand" href="/" title="Kaichun Qiao&#39;s Homepage">
+        Kaichun Qiao
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Open Menu</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Close Menu</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 justify-left
+      ">
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/"
+        >Bio</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/papers/"
+        >Papers</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/experience/"
+        >Experience</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/projects/"
+        >Projects</a
+        >
+      </li>
+      
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+
+      
+      
+      
+      <button
+        aria-label="search"
+        class="text-black hover:text-primary  inline-block px-3 text-xl dark:text-white"
+        id="search_toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512" fill="currentColor"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+      </button>
+      
+
+      
+      
+      <div class="px-3 text-black hover:text-primary-700 dark:text-white dark:hover:text-primary-300
+            [&.active]:font-bold [&.active]:text-black/90 dark:[&.active]:text-white">
+        <button class="theme-toggle mt-1" accesskey="t" title="appearance">
+          <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" class="dark:hidden">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" class=" dark:block [&:not(dark)]:hidden">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+      
+
+      
+      
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+
+<div id="search" class="hidden p-3"></div>
+
+
+        
+      
+    </div>
+    <div class="page-body  my-10">
+      
+
+<div class="max-w-prose mx-auto flex justify-center">
+  <article class="prose prose-slate lg:prose-xl dark:prose-invert">
+    <h1 class="lg:text-6xl">Project5: Fun With Diffusion Models!</h1>
+    <h2 id="part-a-the-power-of-diffusion-models">Part A: The Power of Diffusion Models!</h2>
+<h3 id="setup">Setup</h3>
+<p>For this project, I set the random seed to 180 manually to ensure reproducibility of the results. The DeepFloyd diffusion pipeline utilizes a multi-stage inference process. In Stage 1, images are generated at a resolution of 64x64, which results in lower quality. However, in Stage 2, the resolution is increased to 256x256, resulting in a significant improvement in quality. Each generated image accurately represents the description provided in the prompt, although there are slight imperfections in the eye area of the generated people. Additionally, I experimented with varying the number of inference steps. Increasing the inference steps leads to enhanced detail quality, but it also requires a trade-off with the substantially increased runtime.</p>
+<h4 id="stage1-with-20-steps">Stage1 with 20 steps</h4>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/setup/1_64.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">an oil painting of a snowy mountain village</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/setup/2_64.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a man wearing a hat</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/setup/3_64.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a rocket ship</p>
+    </div>
+</div>
+<h4 id="stage2-with-20-steps">Stage2 with 20 steps</h4>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/setup/1_256.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">an oil painting of a snowy mountain village</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/setup/2_256.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a man wearing a hat</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/setup/3_256.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a rocket ship</p>
+    </div>
+</div>
+<h4 id="stage1-with-100-steps">Stage1 with 100 steps</h4>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/setup/1_64_100.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">an oil painting of a snowy mountain village</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/setup/2_64_100.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a man wearing a hat</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/setup/3_64_100.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a rocket ship</p>
+    </div>
+</div>
+<h4 id="stage2-with-100-steps">Stage2 with 100 steps</h4>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/setup/1_256_100.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">an oil painting of a snowy mountain village</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/setup/2_256_100.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a man wearing a hat</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/setup/3_256_100.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a rocket ship</p>
+    </div>
+</div>
+<h2 id="sampling-loops">Sampling Loops</h2>
+<h3 id="implementing-the-forward-process">Implementing the Forward Process</h3>
+<p>Firstly, we need to implement the forward process:</p>
+$$ x_t = \sqrt{\bar{\alpha_t}}x_0 + \sqrt{1-\bar{\alpha_t}}\epsilon$$<p>The following shows the results after adding noise at timesteps 250, 500, and 750.</p>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/clean.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/250_noisy.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">t = 250</p>
+    </div>
+</div>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/500_noisy.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">t = 500</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/750_noisy.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">t = 750</p>
+    </div>
+</div>
+<h3 id="classical-denoising">Classical Denoising</h3>
+<p>Here, I applied the classic denoising method, Gaussian Blur, with a kernel size of 3 and a sigma of 0.8.</p>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/250_noisy.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">t = 250</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/500_noisy.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">t = 500</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/750_noisy.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">t = 750</p>
+    </div>
+</div>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/250_gau.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">t = 250</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/500_gau.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">t = 500</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/750_gau.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">t = 750</p>
+    </div>
+</div>
+<p>It can be observed that the images remain very blurred after applying Gaussian Blur, with no improvement in quality.</p>
+<h3 id="one-step-denoising">One-Step Denoising</h3>
+<p>To retrieve the original image \( x_0 \) from the noisy image, we need to predict the noise \( \epsilon \) using DeepFloyd and then apply the transformation formula to reconstruct the original image:</p>
+$$ x_0 = \dfrac{x_t - \sqrt{1-\bar{\alpha_t}}\epsilon}{\sqrt{\bar{\alpha_t}}} $$<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/clean.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/250_clean.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">one-step t = 250</p>
+    </div>
+</div>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/500_clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">one-step t = 500</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/750_clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">one-step t = 750</p>
+    </div>
+</div>
+<h3 id="iterative-denoising">Iterative Denoising</h3>
+<p>For iterative denoising, the first step is to create a series of strided timesteps. Here, I opted to start at 990 with a stride of 30, progressively decreasing until reaching 0.</p>
+$$
+x_{t'} = \frac{\sqrt{\overline{\alpha}_{t'} \beta_t}}{1 - \overline{\alpha}_t} x_0 + \frac{\sqrt{\alpha_t (1 - \overline{\alpha}_{t'})}}{1 - \overline{\alpha}_t} x_t + v_{\sigma}
+$$<p>Following the formula above, we progressively denoise the noisy image in steps. Below is a visualization of the iterative denoising process, showing the results at every fifth step.</p>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/iter/1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">t = 690</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/iter/2.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">t = 540</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/iter/3.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">t = 390</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/iter/4.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">t = 240</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/iter/5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">t = 90</p>
+    </div>
+</div>
+<h4 id="comparison-when-t690">Comparison when t=690</h4>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/iter/clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Iterative Denoised</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/iter/onestep.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">One-Step Denoised</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/iter/gau.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Gaussian Blurred</p>
+    </div>
+</div>
+<p>From the results above, it&rsquo;s evident that iterative denoising significantly outperforms one-step denoising in terms of image quality, albeit at the cost of increased processing time.</p>
+<h3 id="diffusion-model-sampling">Diffusion Model Sampling</h3>
+<p>Here, I generated five random images using pure random noise with the prompt &ldquo;a high quality photo&rdquo;.</p>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/DM/1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;"></p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/DM/2.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;"></p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/DM/3.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;"></p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/DM/4.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;"></p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/DM/5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;"></p>
+    </div>
+</div>
+<p>Judging from the results, these five images lack significant semantic information and have relatively poor quality.</p>
+<h3 id="classifier-free-guidance">Classifier Free Guidance</h3>
+<p>In CFG, we compute both a noise estimate conditioned on a text prompt, and an unconditional noise estimate. We denote these $\epsilon_c$ and $\epsilon_u$. Then, we let our new noise estimate be</p>
+$$\epsilon = \epsilon_u + \gamma (\epsilon_c - \epsilon_u)$$<p>Here, I used $\gamma=7$.</p>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/CFG/1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;"></p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/CFG/2.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;"></p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/CFG/3.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;"></p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/CFG/4.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;"></p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/CFG/5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;"></p>
+    </div>
+</div>
+<p>Compared to the previous Diffusion Model Sampling, the image quality here has improved significantly, with each image carrying distinct semantic information.</p>
+<h3 id="image-to-image-translation">Image-to-image Translation</h3>
+<p>In diffusion, adding varying levels of noise to an image enables image-to-image translation. As the noise level increases, the generated image diverges more from the original, allowing us to control the degree of translation. This approach provides flexible adjustment for the extent of transformation applied to the image.</p>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">1</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/3.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">3</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">5</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/7.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">7</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/10.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">10</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/20.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">20</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/sample/clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+</div>
+<h4 id="editing-hand-drawn-and-web-images">Editing Hand-Drawn and Web Images</h4>
+<h5 id="web-image">Web Image</h5>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/web/1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">1</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/web/3.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">3</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/web/5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">5</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/web/7.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">7</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/web/10.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">10</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/web/20.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">20</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/web/clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+</div>
+<h5 id="hand-drawn-1">Hand-Drawn 1</h5>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd1/1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">1</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd1/3.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">3</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd1/5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">5</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd1/7.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">7</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd1/10.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">10</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd1/20.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">20</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd1/clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+</div>
+<h5 id="hand-drawn-2">Hand-Drawn 2</h5>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd2/1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">1</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd2/3.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">3</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd2/5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">5</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd2/7.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">7</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd2/10.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">10</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd2/20.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">20</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/i2i/hd2/clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+</div>
+<h4 id="inpainting">Inpainting</h4>
+<p>Image inpainting can be achieved by denoising only one patch at a time while keeping the rest of the image unchanged. This approach allows us to modify specific areas while maintaining the style of the original image, enabling targeted edits that blend seamlessly with the original content.</p>
+<h4 id="campanile">Campanile</h4>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/test/clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/test/mask.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">mask</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/test/replace.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">to replace</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/test/result.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">inpainted</p>
+    </div>
+</div>
+<h4 id="hand-drawn-image">Hand-Drawn Image</h4>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/hd/clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/hd/mask.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">mask</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/hd/replace.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">to replace</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/hd/result.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">inpainted</p>
+    </div>
+</div>
+<h4 id="web-image-1">Web Image</h4>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/web/clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/web/mask.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">mask</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/web/replace.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">to replace</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/web/result.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">inpainted</p>
+    </div>
+</div>
+<h3 id="text-conditional-image-to-image-translation">Text-Conditional Image-to-image Translation</h3>
+<p>In the denoising process, adding a semantic condition can guide the content of the output. As the amount of added noise decreases, the results are increasingly controlled by the input image rather than the prompt. This allows for fine-tuning the influence of the input image versus the prompt, enabling more precise content manipulation based on the original image.</p>
+<h4 id="campanile-with-prompt-a-rocket-ship">Campanile with prompt &ldquo;a rocket ship&rdquo;</h4>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">1</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/3.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">3</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">5</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/7.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">7</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/10.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">10</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/20.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">20</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/inpainting/test/clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+</div>
+<h4 id="hand-drawn-1-with-prompt-an-oil-painting-of-people-around-a-campfire">Hand-Drawn 1 with prompt &ldquo;an oil painting of people around a campfire&rdquo;</h4>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd1/1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">1</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd1/3.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">3</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd1/5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">5</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd1/7.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">7</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd1/10.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">10</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd1/20.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">20</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd1/clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+</div>
+<h4 id="hand-drawn-2-with-prompt-an-oil-painting-of-a-snowy-mountain-village">Hand-Drawn 2 with prompt &ldquo;an oil painting of a snowy mountain village&rdquo;</h4>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd2/1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">1</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd2/3.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">3</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd2/5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">5</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd2/7.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">7</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd2/10.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">10</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd2/20.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">20</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/prompt/hd2/clean.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">raw image</p>
+    </div>
+</div>
+<h3 id="visual-anagrams">Visual Anagrams</h3>
+<p>To generate visual anagrams, we input two prompts simultaneously. One prompt guides the regular denoising of the image, while the other applies denoising to a flipped version of the image. Finally, we average the two noise predictions and denoise the image accordingly, achieving a result that carries semantic information from both the normal and flipped perspectives.</p>
+$$\epsilon_1 = \text{UNet}(x_t, t, p_1) $$$$\epsilon_2 = \text{flip}(\text{UNet}(\text{flip}(x_t), t, p_2))$$$$\epsilon = \frac{\epsilon_1 + \epsilon_2}{2}$$<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/anagram/1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">an oil painting of an old man</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/anagram/1_flip.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">an oil painting of people around a campfire</p>
+    </div>
+</div>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/anagram/2.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a rocket ship</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/anagram/2_flip.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a pencil</p>
+    </div>
+</div>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/anagram/3.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a lithograph of a skull</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/anagram/3_flip.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a man wearing a hat</p>
+    </div>
+</div>
+<h3 id="hybrid-images">Hybrid Images</h3>
+<p>To generate hybrid images, we perform frequency separation on the noise predicted for each of the two prompts. This approach allows us to embed distinct semantic information in the high-frequency and low-frequency noise components. As a result, the generated image simultaneously contains both types of semantic information—one conveyed through high-frequency details and the other through low-frequency features.</p>
+$$\epsilon_1 = \text{UNet}(x_t, t, p_1)$$$$\epsilon_2 = \text{UNet}(x_t, t, p_2) $$$$\epsilon = f_{\text{lowpass}}(\epsilon_1) + f_{\text{highpass}}(\epsilon_2)$$<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/hybrid/1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a lithograph of waterfalls</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/hybrid/1_low.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a lithograph of a skull</p>
+    </div>
+</div>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/hybrid/2.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">an oil painting of people around a campfire</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/hybrid/2_low.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">an oil painting of an old man</p>
+    </div>
+</div>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/hybrid/3.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a rocket ship</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/hybrid/3_low.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">a pencil</p>
+    </div>
+</div>
+<h3 id="bells--whistles">Bells &amp; Whistles</h3>
+<p>An interesting observation is that DeepFloyd seems to have a bias toward generating human faces or bodies. In scenarios with no conditions or weak conditions, it frequently produces images of faces, likely due to an overrepresentation of faces in the dataset distribution.</p>
+<p>I designed a course logo with prompt &ldquo;Generate a high quality course logo. There is a rectangle sci-fi bounding box in the outermost, a robot eye in the right and fancy style text &ldquo;CS180&rdquo; in the left.&rdquo;</p>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./A/output.jpg" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">CS180 course logo</p>
+    </div>
+</div>
+<hr>
+
+  </article>
+</div>
+
+
+
+
+<div class="flex flex-col items-center">
+
+  <div class="container max-w-[65ch] mx-auto bg-white dark:bg-zinc-900 rounded-xl border-gray-100 dark:border-gray-700 border shadow-md overflow-hidden my-5">
+
+
+  
+  
+
+  </div>
+
+
+  
+
+
+</div>
+
+
+    </div>
+    <div class="page-footer">
+      <footer class="container mx-auto flex flex-col justify-items-center text-sm leading-6 mt-24 mb-4 text-slate-700 dark:text-slate-200">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by text-center">
+    © 2024 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+
+  <p class="powered-by text-center">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://hugoblox.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Hugo Blox Builder</a> — the free, <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+
+</footer>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
