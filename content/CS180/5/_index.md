@@ -694,3 +694,240 @@ I designed a course logo with prompt "Generate a high quality course logo. There
 </div>
 
 -------
+
+## Part B: Diffusion Models from Scratch!
+
+### Part 1: Training a Single-Step Denoising UNet
+
+#### Implementing the UNet
+
+In this project, we implement the denoiser as a UNet. It consists of a few downsampling and upsampling blocks with skip connections.
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/unet.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Unconditional UNet</p>
+    </div>
+</div>
+
+The diagram above uses a number of standard tensor operations defined as follows:
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/unet_cond.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">UNet Operations</p>
+    </div>
+</div>
+
+-  Conv doesn't change the image resolution, only the channel dimension.
+-  DownConv downsamples the tensor by 2.
+-  UpConv upsamples the tensor by 2.
+-  Flatten flattens a 7x7 tensor into a 1x1 tensor. 7 is the resulting height and width after the downsampling operations.
+-  Unflatten unflattens a 1x1 tensor into a 7x7 tensor.
+-  Concat is a simple channel-wise concatenation between tensors with the same 2D shape. This is simply torch.cat.
+- D is the number of hidden channels and is a hyperparameter that we will set ourselves.
+
+We define composed operations using our simple operations in order to make our network deeper. This doesn't change the tensor's height, width, or number of channels, but simply adds more learnable parameters.
+
+-  ConvBlock, is similar to Conv but includes an additional Conv. Note that it has the same input and output shape as (1) Conv.
+-  DownBlock, is similar to DownConv but includes an additional ConvBlock. Note that it has the same input and output shape as (2) DownConv.
+-  UpBlock, is similar to UpConv but includes an additional ConvBlock. Note that it has the same input and output shape as (3) UpConv.
+
+Within the simple operations:
+- Conv2d(kernel_size, stride, padding) is nn.Conv2d(kernel_size, stride, padding)
+- BN is nn.BatchNorm2d
+- GELU is nn.GELU()
+- Conv2d⁻¹(kernel_size, stride, padding) is nn.ConvTranspose2d(kernel_size, stride, padding)
+- AvgPool(kernel_size) is nn.AvgPool2d(kernel_size)
+
+
+#### Using the UNet to Train a Denoiser
+
+Recall from equation 1 that we aim to solve the following denoising problem: Given a noisy image $z$, we aim to train a denoiser $D_\theta$ such that it maps $z$ to a clean image $x$. To do so, we can optimize over an $L2$ loss
+
+$$
+L = \mathbb{E}_{z,x} \|D_\theta(z) - x\|^2.
+$$
+
+To train our denoiser, we need to generate training data pairs of $(z, x)$, where each $x$ is a clean MNIST digit. For each training batch, we can generate $z$ from $x$ using the following noising process:
+
+$$
+z = x + \sigma \epsilon, \quad \text{where} \quad \epsilon \sim N(0, I).
+$$
+
+Visualize the different noising processes over $\sigma = [0.0, 0.2, 0.4, 0.5, 0.6, 0.8, 1.0]$, assuming normalized $x \in [0, 1]$. It should be similar to the following plot:
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/noise.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Visiualization of image with noise</p>
+    </div>
+</div>
+
+#### Training
+- We train a denoiser to denoise noisy image $z$ with $\sigma=0.5$ applied to a clean image $x$.
+- I trained this UNet for 5 epochs
+- I used the Unconditional UNet network with 128 hidden dims
+- I set the learning rate 1e-4
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/uncond_loss.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Training Loss Curve</p>
+    </div>
+</div>
+
+The following are the result in training process:
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/uncond_epoch1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Results on epoch 1</p>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/uncond_epoch5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Results on epoch 5</p>
+    </div>
+</div>
+
+#### Out-of-Distribution Testing
+
+Our denoiser was trained on MNIST digits noised with $\sigma=0.5$. Let's see how the denoise performs on different $\sigma$'s that it wasn't trained for.
+
+Visualize the denoiser result on test set digits with varying levels of noise $\sigma=[0.0, 0.2, 0.4, 0.5, 0.6, 0.8, 1.0]$
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/ood.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Results on digits from the test set with varying noise levels</p>
+    </div>
+</div>
+
+### Part 2: Training a DDPM Denoising UNet
+
+#### Refactoring Your Unconditional UNet for DDPM
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/unet_condition.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Conditional UNet</p>
+    </div>
+</div>
+
+#### Implementing DDPM Forward and Reverse Process
+
+Specifically, each forward step adds Gaussian noise in a variance-preserving way for some variance schedule $\{\beta_t\}_{t=1}^T$:
+
+$$
+q(\mathbf{x}_{1:T}|\mathbf{x}_0) := \prod_{t=1}^T q(\mathbf{x}_t|\mathbf{x}_{t-1}), \quad q(\mathbf{x}_t|\mathbf{x}_{t-1}) := \mathcal{N}(\mathbf{x}_t; \sqrt{1 - \beta_t} \, \mathbf{x}_{t-1}, \beta_t \mathbf{I}).
+$$
+
+Using the reparameterization trick presented in section 2 of the DDPM paper, we can compute effective one-step noising function, since a Gaussian convolved with a Gaussian is still Gaussian.
+
+Concretely, let $\alpha_t := 1 - \beta_t$ and $\bar{\alpha}_t := \prod_{s=1}^t \alpha_s$, then we can sample a noisy $\mathbf{x}_t$ for an arbitrary $t$:
+
+$$
+q(\mathbf{x}_t|\mathbf{x}_0) = \mathcal{N}(\mathbf{x}_t; \sqrt{\bar{\alpha}_t} \, \mathbf{x}_0, (1 - \bar{\alpha}_t) \mathbf{I}).
+$$
+
+The ddpm_forward() function is implemented by following algorithm 1:
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/algo1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">DDPM Forward Process</p>
+    </div>
+</div>
+
+The ddpm_sample() is implement by following algorithm 2:
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/algo2.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">DDPM Sampling Process</p>
+    </div>
+</div>
+
+#### Putting It All Together
+
+- I trained the model for 20 epochs
+- With a learning rate 1e-4
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/cond_loss.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Training Loss Curve</p>
+    </div>
+</div>
+
+Below is the images of the test result of some epochs:
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/epoch1.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Epoch 1</p>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/epoch5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Epoch 5</p>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/epoch10.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Epoch 10</p>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/epoch20.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">Epoch 20</p>
+    </div>
+</div>
+
+In epoch 1, the results for the digit "1" appear as pure noise. One possible explanation is that the digit "1" has a simple linear structure, making it harder for the model to learn from limited data. However, as training progresses, subsequent epochs demonstrate significant improvement in the results.
+
+At the same time, we can observe that as the number of training epochs increases, the quality of the generated images improves significantly, and the control over the categories becomes more precise.
+
+The following shows the results we use different guidance_scale:
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/gs0.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">guidance scale 0</p>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/gs5.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">guidance scale 5</p>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/gs10.png" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">guidance scale 10</p>
+    </div>
+</div>
+
+As the guidance scale increases, the characteristic features of the resulting images become more pronounced (e.g., the strokes of the digits appear thicker). In this case, the CFG amplifies the feature vector of each digit by a certain factor, enhancing the distinct features of each digit to better differentiate between categories.
+
+
+### Bells & Whistles
+
+I create a sampling gif below.
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./B/output.gif" alt="Second Image" style="width: 100%;">
+        <p style="text-align: center;">denoise gif</p>
+    </div>
+</div>
