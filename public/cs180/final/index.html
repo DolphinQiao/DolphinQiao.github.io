@@ -1,0 +1,1129 @@
+<!doctype html>
+<!-- This site was created with Hugo Blox. https://hugoblox.com -->
+<!-- Last Published: December 6, 2024 --><html lang="en-us" dir="ltr"
+      data-wc-theme-default="system">
+  
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="Hugo Blox Builder 0.2.0" />
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Kaichun Qiao" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Kaichun Qiao Homepage" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://example.com/cs180/final/" />
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/themes/emerald.min.css" />
+  
+
+  
+  
+    
+    <link href="/dist/wc.min.css" rel="stylesheet" />
+  
+
+  
+  
+  
+
+  
+
+  <script>
+     
+    window.hbb = {
+       defaultTheme: document.documentElement.dataset.wcThemeDefault,
+       setDarkTheme: () => {
+        document.documentElement.classList.add("dark");
+        document.documentElement.style.colorScheme = "dark";
+      },
+       setLightTheme: () => {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.style.colorScheme = "light";
+      }
+    }
+
+    console.debug(`Default Hugo Blox Builder theme is ${window.hbb.defaultTheme}`);
+
+    if ("wc-color-theme" in localStorage) {
+      localStorage.getItem("wc-color-theme") === "dark" ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+    } else {
+      window.hbb.defaultTheme === "dark" ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+      if (window.hbb.defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+      }
+    }
+  </script>
+
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      let checkboxes = document.querySelectorAll('li input[type=\'checkbox\'][disabled]');
+      checkboxes.forEach(e => {
+        e.parentElement.parentElement.classList.add('task-list');
+      });
+
+      
+      const liNodes = document.querySelectorAll('.task-list li');
+      liNodes.forEach(nodes => {
+        let textNodes = Array.from(nodes.childNodes).filter(node => node.nodeType === 3 && node.textContent.trim().length > 1);
+        if (textNodes.length > 0) {
+          const span = document.createElement('label');
+          textNodes[0].after(span);  
+          span.appendChild(nodes.querySelector('input[type=\'checkbox\']'));
+          span.appendChild(textNodes[0]);
+        }
+      });
+    });
+  </script>
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <link rel="alternate" href="/cs180/final/index.xml" type="application/rss+xml" title="Kaichun Qiao&#39;s Homepage" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hu7544168490934758255.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu6933210922419359523.png" />
+
+  <link rel="canonical" href="https://example.com/cs180/final/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Kaichun Qiao&#39;s Homepage" />
+  <meta property="og:url" content="https://example.com/cs180/final/" />
+  <meta property="og:title" content="Final Project: High Dynamic Range | Kaichun Qiao&#39;s Homepage" />
+  <meta property="og:description" content="Kaichun Qiao Homepage" /><meta property="og:image" content="https://example.com/media/icon_hu15239317627240320443.png" />
+    <meta property="twitter:image" content="https://example.com/media/icon_hu15239317627240320443.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta property="og:updated_time" content="2024-11-30T00:00:00&#43;00:00" />
+    
+  
+
+  
+
+
+
+
+  <title>Final Project: High Dynamic Range | Kaichun Qiao&#39;s Homepage</title>
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <style>
+    @font-face {
+      font-family: 'Inter var';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url(/dist/font/Inter.var.woff2) format(woff2);
+    }
+  </style>
+
+  
+
+  
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/dist/pagefind/pagefind-ui.be766eb419317a14ec769d216e9779bfe8f3737c80e780f4ba0dafb57a41a482.css" integrity="sha256-vnZutBkxehTsdp0hbpd5v&#43;jzc3yA54D0ug2vtXpBpII=" />
+
+
+<script src="/dist/pagefind/pagefind-ui.87693d7c6f2b3b347ce359d0ede762c033419f0a32b22ce508c335a81d841f1b.js" integrity="sha256-h2k9fG8rOzR841nQ7ediwDNBnwoysizlCMM1qB2EHxs="></script>
+
+
+<script>window.hbb.pagefind = {"baseUrl":"/"};</script>
+
+<style>
+  html.dark {
+    --pagefind-ui-primary: #eeeeee;
+    --pagefind-ui-text: #eeeeee;
+    --pagefind-ui-background: #152028;
+    --pagefind-ui-border: #152028;
+    --pagefind-ui-tag: #152028;
+  }
+</style>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      baseUrl: window.hbb.pagefind.baseUrl,
+      bundlePath: window.hbb.pagefind.baseUrl + "pagefind/",
+    });
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    let element = document.getElementById('search');
+    let trigger = document.getElementById('search_toggle');
+
+    if (trigger) {
+      trigger.addEventListener('click', () => {
+        element.classList.toggle('hidden');
+        element.querySelector("input").value = ""
+        element.querySelector("input").focus()
+
+        if (!element.classList.contains('hidden')) {
+          let clear_trigger = document.querySelector('.pagefind-ui__search-clear');
+
+          if (clear_trigger && !clear_trigger.hasAttribute('listenerOnClick')) {
+            clear_trigger.setAttribute('listenerOnClick', 'true');
+
+            clear_trigger.addEventListener('click', () => {
+              element.classList.toggle('hidden');
+            });
+          }
+        }
+
+      });
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link type="text/css" rel="stylesheet" href="/dist/lib/katex/katex.min.505d5f829022bb7b4f24dfee0aa1141cd7bba67afe411d1240335f820960b5c3.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr&#43;QR0SQDNfgglgtcM=" />
+  
+  
+  <script defer src="/dist/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw&#43;iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4="></script>
+  
+  
+  
+  
+  <script defer src="/js/katex-renderer.6579ec9683211cfb952064aedf3a3baea5eeb17a061775b32b70917474637c80.js" integrity="sha256-ZXnsloMhHPuVIGSu3zo7rqXusXoGF3WzK3CRdHRjfIA="></script>
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  <script
+    defer
+    src="/js/hugo-blox-en.min.e5fa931947cac2d947732ea37a770aae2b5bd4a50b6048060cd129b46159a06d.js"
+    integrity="sha256-5fqTGUfKwtlHcy6jencKritb1KULYEgGDNEptGFZoG0="
+  ></script>
+
+  
+  
+
+
+
+
+
+
+
+
+  
+    
+      
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+      
+    
+  
+
+
+
+
+</head>
+
+  <body class="dark:bg-hb-dark dark:text-white page-wrapper" id="top">
+    <div id="page-bg"></div>
+    <div class="page-header sticky top-0 z-30">
+      
+      
+      
+        
+        
+        
+          <header id="site-header" class="header">
+  <nav class="navbar px-3 flex justify-left">
+    <div class="order-0 h-100">
+      
+      <a class="navbar-brand" href="/" title="Kaichun Qiao&#39;s Homepage">
+        Kaichun Qiao
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Open Menu</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Close Menu</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 justify-left
+      ">
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/"
+        >Bio</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/papers/"
+        >Papers</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/experience/"
+        >Experience</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/projects/"
+        >Projects</a
+        >
+      </li>
+      
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+
+      
+      
+      
+      <button
+        aria-label="search"
+        class="text-black hover:text-primary  inline-block px-3 text-xl dark:text-white"
+        id="search_toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512" fill="currentColor"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+      </button>
+      
+
+      
+      
+      <div class="px-3 text-black hover:text-primary-700 dark:text-white dark:hover:text-primary-300
+            [&.active]:font-bold [&.active]:text-black/90 dark:[&.active]:text-white">
+        <button class="theme-toggle mt-1" accesskey="t" title="appearance">
+          <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" class="dark:hidden">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" class=" dark:block [&:not(dark)]:hidden">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+      
+
+      
+      
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+
+<div id="search" class="hidden p-3"></div>
+
+
+        
+      
+    </div>
+    <div class="page-body  my-10">
+      
+
+<div class="max-w-prose mx-auto flex justify-center">
+  <article class="prose prose-slate lg:prose-xl dark:prose-invert">
+    <h1 class="lg:text-6xl">Final Project: High Dynamic Range</h1>
+    <h3 id="background">Background</h3>
+<p>Modern cameras are unable to capture the full dynamic range of commonly encountered real-world scenes. In some scenes, even the best possible photograph will be partially under or over-exposed. Researchers and photographers commonly get around this limitation by combining information from multiple exposures of the same scene. You will write software to automatically combine multiple exposures into a single high dynamic range radiance map, and then convert this radiance map to an image suitable for display through tone mapping.</p>
+<div style="display: flex; justify-content: space-around; align-items: flex-start; flex-wrap: wrap;">
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/16_1.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/8_1.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/4_1.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/2_1.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/1_1.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/1_2.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/1_4.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/1_8.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/1_16.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/1_32.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/1_64.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/1_128.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/1_256.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/1_512.png" alt="First Image" style="width: 100%;">
+    </div>
+    <div style="flex: 1; padding: 1px;">
+        <img src="./chapel/1_1024.png" alt="First Image" style="width: 100%;">
+    </div>
+</div>
+<h3 id="radiance-map-construction">Radiance map construction</h3>
+<p>The following algorithm comes from <a href="https://www.pauldebevec.com/Research/HDR/debevec-siggraph97.pdf" target="_blank" rel="noopener">Debevec and Malik 1997</a>.</p>
+<p>The observed pixel value $Z_{ij}$ for pixel $i$ in image $j$ is a function of unknown scene radiance and known exposure duration: $Z_{ij} = f(E_i \Delta t_j)$. $E_i$ is the unknown scene radiance at pixel i, and scene radiance integrated over some time $E_i \Delta t_j$ is the exposure at a given pixel. In general, $f$ might be a somewhat complicated pixel response curve. We will not solve for $f$, but for $g=ln(f-1)$ which maps from pixel values (from 0 to 255) to the log of exposure values: g$(Z_{ij}) = ln(E_i) + ln(t_j)$ (equation 2 in Debevec). Solving for $g$ might seem impossible (and indeed, we only recover g up to a scale factor) because we know neither $g$ or $E_i$. The key observation is that the scene is static, and while we might not know the absolute value of $E_i$ at each pixel $i$, we do know that the value remains constant across the image sequence.</p>
+<p>Solving for $g$ is the tricky part. After we have $g$, is it straightforward to map from the observed pixels values and shutter times to radiance by the following equation (rearranged from above): $ln(E_i) = g(Z_{ij})-ln(\Delta t_j)$.</p>
+<p>To make the results robust, we want to consider two additional things:</p>
+<ul>
+<li>
+<p>We expect $g$ to be smooth. Debevec adds a constraint to our linear system which penalizes $g$ according to the magnitude of its second derivative. Since $g$ is discrete (defined only at integer values from $g(0)$ to $g(255)$) we can approximate the second derivative with finite differences, e.g. $g''(x) = (g(x-1) - g(x)) - (g(x) - g(x+1)) = g(x-1) + g(x+1) - 2*g(x)$. We will have one such equation for each integer in the domain of $g$, except for $g(0)$ and $g(255)$ where the second derivative would be undefined.</p>
+</li>
+<li>
+<p>Each exposure only gives us trustworthy information about certain pixels (i.e. the well exposed pixels for that image). For dark pixels the relative contribution of noise is high and for bright pixels the sensor may have been saturated. To make our estimates of $E_i$ more accurate we need to weight the contribution of each pixel according to Equation 6 in Debevec. An example of a weighting function $w$ is a triangle function that peaks at $Z=127.5$, and is zero at $Z=0$ and $Z=255$. This is provided for you in the starter code. This weighting should be used both when solving for $g$ and when using $g$ to build the HDR radiance map for all pixels.</p>
+</li>
+</ul>
+<p>First, we calculate the response curve for each channel:</p>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/chapel/response_curve_1.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Red channel Response Curve</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/chapel/response_curve_2.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Green channel Response Curve</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/chapel/response_curve_1.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Blue channel Response Curve</p>
+    </div>
+</div>
+<p>Then, we use this curve to generate linear radiance map.</p>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/chapel/result_hdr1.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Red channel Radiance Map</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/chapel/result_hdr2.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Green channel Radiance Map</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/chapel/result_hdr3.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Blue channel Radiance Map</p>
+    </div>
+</div>
+<h3 id="tone-mapping">Tone mapping</h3>
+<p>The following algorithm comes from <a href="http://people.csail.mit.edu/fredo/PUBLI/Siggraph2002/DurandBilateral.pdf" target="_blank" rel="noopener">Durand 2002</a>.</p>
+<p>Getting the radiance map is only half the battle. You want to be able to show off your image clearly. There are a few gobal tone-mapping operators to play with, such as $log(L)$, $sqrt(L)$, and $\frac{L}{L+1}$. Regardless of which transform you use, you&rsquo;ll want to stretch the intensity values in the resulting image to fill the [0 255] range for maximum contrast.</p>
+<p>Once you see something reasonable using a global tone mapping operation, you&rsquo;ll need to implement a local method for full credit.</p>
+<p>You&rsquo;ll be implementing a simplified version of Durand 2002. The steps are roughly as follows:</p>
+<ol>
+<li>Your input is linear RGB values of radiance.</li>
+<li>Compute the intensity (I) by averaging the color channels.</li>
+<li>Compute the chrominance channels: (R/I, G/I, B/I)</li>
+<li>Compute the log intensity: L = log2(I)</li>
+<li>Filter that with a bilateral filter: B = bf(L)</li>
+<li>Compute the detail layer: D = L - B</li>
+<li>Apply an offset and a scale to the base: B&rsquo; = (B - o) * s
+<ol>
+<li>The offset is such that the maximum intensity of the base is 1. Since the values are in the log domain, o = max(B).</li>
+<li>The scale is set so that the output base has dR stops of dynamic range, i.e., s = dR / (max(B) - min(B)). I choose $dR=5$ and $\gamma=1/2.$ here.</li>
+</ol>
+</li>
+<li>Reconstruct the log intensity: O = 2^(B&rsquo; + D)</li>
+<li>Put back the colors: R&rsquo;,G&rsquo;,B&rsquo; = O * (R/I, G/I, B/I)</li>
+<li>Apply gamma compression.</li>
+</ol>
+<p>First, we can visualize the result of bilateral filter:</p>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/chapel/bilateral.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Bilateral Filter visualization</p>
+    </div>
+</div>
+<p>Then, we can get a high dynamic range image:</p>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/chapel/result_tone_mapped.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Tone Mapping result</p>
+    </div>
+</div>
+<p>I also tried several tone mapping methods to compare with my method.</p>
+<ul>
+<li>Linear Mapping. Linearly mapping the radiance value into range(0, 255).</li>
+<li>Gamma Correction. $V_{out} = V_{in}^{\gamma}$ and then linearly mapping into range(0, 255). Here I choose $\gamma=1/2.$</li>
+<li>Log Transform. $V_{out} = \log V_{in}$ and then linearly mapping into range(0, 255).</li>
+</ul>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/chapel/result_linear.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Linear Mapping</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/chapel/result_gamma.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Gamma Correction Mapping</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/chapel/result_log.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Log Transform Mapping</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/chapel/result_tone_mapped.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Our Mapping</p>
+    </div>
+</div>
+<h3 id="result-gallery">Result Gallery</h3>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/arch/result_tone_mapped.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Arch</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/bonsai/result_tone_mapped.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Bonsai</p>
+    </div>
+</div>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/garage/result_tone_mapped.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Garage</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/house/result_tone_mapped.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">House</p>
+    </div>
+</div>
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/mug/result_tone_mapped.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Mug</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/window/result_tone_mapped.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Window</p>
+    </div>
+</div>
+<h3 id="bells--whistles">Bells &amp; Whistles</h3>
+
+  </article>
+</div>
+
+
+
+
+<div class="flex flex-col items-center">
+
+  <div class="container max-w-[65ch] mx-auto bg-white dark:bg-zinc-900 rounded-xl border-gray-100 dark:border-gray-700 border shadow-md overflow-hidden my-5">
+
+
+  
+  
+
+  </div>
+
+
+  
+
+
+</div>
+
+
+    </div>
+    <div class="page-footer">
+      <footer class="container mx-auto flex flex-col justify-items-center text-sm leading-6 mt-24 mb-4 text-slate-700 dark:text-slate-200">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by text-center">
+    © 2024 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+
+  <p class="powered-by text-center">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://hugoblox.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Hugo Blox Builder</a> — the free, <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+
+</footer>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
