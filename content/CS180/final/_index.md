@@ -210,3 +210,104 @@ I also tried several tone mapping methods to compare with my method.
 </div>
 
 ### Bells & Whistles
+
+Below are the result of the hdr image by myself. All images are taken by Xiaomi 14.
+
+Raw images with different shutter speed:
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./custom/1_1250.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">1/1250s</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./custom/1_800.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">1/800s</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./custom/1_200.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">1/200s</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./custom/1_30.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">1/30s</p>
+    </div>
+        <div style="flex: 1; padding: 10px;">
+        <img src="./custom/1_10.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">1/10s</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./custom/1_2.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">1/2s</p>
+    </div>
+</div>
+
+Response Curves:
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/custom/response_curve_1.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Red channel Response Curve</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/custom/response_curve_2.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Green channel Response Curve</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/custom/response_curve_1.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Blue channel Response Curve</p>
+    </div>
+</div>
+
+Radiance Maps:
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/custom/result_hdr1.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Red channel Radiance Map</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/custom/result_hdr2.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Green channel Radiance Map</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/custom/result_hdr3.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Blue channel Radiance Map</p>
+    </div>
+</div>
+
+Bilateral Filter:
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/custom/bilateral.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Bilateral Filter visualization</p>
+    </div>
+</div>
+
+HDR Image:
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/custom/result_tone_mapped.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Tone Mapping result</p>
+    </div>
+</div>
+
+Comparision:
+<div style="display: flex; justify-content: space-around; align-items: flex-start;">
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/custom/result_linear.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Linear Mapping</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/custom/result_gamma.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Gamma Correction Mapping</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/custom/result_log.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Log Transform Mapping</p>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <img src="./result/custom/result_tone_mapped.png" alt="First Image" style="width: 100%;">
+        <p style="text-align: center;">Our Mapping</p>
+    </div>
+</div>
